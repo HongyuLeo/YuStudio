@@ -1,5 +1,15 @@
 # YuStudio 1.3.0 verification / 验证说明
 
+## Verified results · 2026-10-05 / 实测结果
+
+- Linux: 26 tests passed. Windows CI: 25 passed, 1 skipped (the Unix executable stand-in used for NVENC argument capture).
+- The packaged `YuStudio.exe` started on the Windows CI runner. Both languages, persisted language preference, all five demo tracks, API health and bundled FFmpeg/FFprobe passed.
+- A real 2.4-second, two-song image/video export completed in both orientations: 1920×1080 and 1080×1920, 30 FPS, 72 video frames each, AAC at 48 kHz. English progress messages were checked during preparation and rendering.
+- Chinese/English introduction-page switching, remembered language and a 390-pixel mobile layout passed. Chinese fonts are hosted with the site.
+- Both GitHub Release ZIPs were actually downloaded and passed SHA-256 and full ZIP CRC validation. Windows ZIP: 312,467,715 bytes; source ZIP: 10,769,614 bytes.
+
+Linux 26 项测试通过；Windows 25 项通过、1 项跳过。Windows 包实际启动并验证双语、语言记忆、演示和内置组件。横竖屏实际短片导出、英文进度、介绍页切换及手机排版通过。两个正式下载包均已实际下载并通过 SHA-256 与 ZIP 完整性检查。
+
 ## Automated checks / 自动检查
 
 - 26 tests cover timeline/layout dimensions, project validation, media imports, video loops, frame caching/cancellation, NVENC arguments and probes, throughput diagnostics, concurrency selection and translation completeness.
