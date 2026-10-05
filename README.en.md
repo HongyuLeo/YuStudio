@@ -28,9 +28,9 @@ The Windows x64 package includes Electron, fonts, FFmpeg and platform rendering 
 - Project files, local autosave, live preview, cancellation and downloadable diagnostics.
 - No software branding or watermark in exports. Blank artists are hidden.
 
-## Upgrade from Nocturne Studio
+## Updates and project compatibility
 
-Close the old app, extract YuStudio into a new folder and open it. When YuStudio has no existing media library, it checks for the previous `nocturne-music-video-studio` profile and reuses that directory. Keep the old profile in place. You can also select **Open** to load an existing project JSON. The project format and relative media paths are unchanged.
+Close the old app, extract YuStudio into a new folder and open it. When YuStudio has no existing media library, it checks for an existing user profile and reuses that directory. Keep the old profile in place. You can also select **Open** to load an existing project JSON. The project format and relative media paths are unchanged.
 
 ## Performance
 

@@ -22,7 +22,7 @@ module.exports = async (win, origin, languageFile) => {
   await switchLanguage('zh-CN');
   await wait(`document.body.innerText.includes('生成音乐影像') && document.body.innerText.includes('实测最快并发')`);
   const health = await fetch(origin + '/api/health').then(response => response.json());
-  if (!health.ok || health.version !== '1.3.0') throw new Error('Local service health failed');
+  if (!health.ok || health.version !== '1.3.1') throw new Error('Local service health failed');
   const {execFileSync} = require('node:child_process');
   const ffmpeg = execFileSync(process.env.FFMPEG_PATH, ['-version'], {encoding:'utf8',windowsHide:true});
   const ffprobe = execFileSync(process.env.FFPROBE_PATH, ['-version'], {encoding:'utf8',windowsHide:true});

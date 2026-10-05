@@ -41,7 +41,7 @@ export async function createStudioServer(port = Number(process.env.PORT || 4317)
   app.use('/exports', express.static(outputRoot, {fallthrough: false, setHeaders: (res, file) => {
     res.setHeader('Content-Disposition', `attachment; filename="${path.basename(file)}"`);
   }}));
-  app.get('/api/health', (_req, res) => res.json({ok: true, version: '1.3.0', outputFolder: outputRoot}));
+  app.get('/api/health', (_req, res) => res.json({ok: true, version: '1.3.1', outputFolder: outputRoot}));
   app.get('/api/performance', (_req, res) => res.json(machineInfo()));
   app.get('/api/frame-cache',async(_req,res)=>{
     const folders=await fs.readdir(frameCacheRoot).catch(()=>[]);let bytes=0,backgrounds=0;

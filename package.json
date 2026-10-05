@@ -1,6 +1,6 @@
 {
   "name": "yustudio",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "private": true,
   "description": "Bilingual local music video studio with cinematic scenes and NVIDIA NVENC",
   "main": "src/desktop/main.cjs",

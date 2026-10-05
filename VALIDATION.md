@@ -32,3 +32,12 @@ The local development environment uses Linux with software graphics, not an NVID
 The initial Chromium download requires a network connection. Exports have no resume-after-reboot support. Source archives require a build before starting production mode. The Windows ZIP has no commercial code signature.
 
 首次 Chromium 准备需要网络。导出不支持重启后的断点续传。源码启动生产模式前需要构建。Windows ZIP 未使用商业代码签名。
+
+## 1.3.1 branding correction / 品牌显示修正
+
+- Replaced the text logo with a centered, symmetrical SVG Y; regenerated PNG/ICO icons and both editor screenshots.
+- Chinese and English introduction pages, READMEs and release notes use YuStudio consistently.
+- Local: 26 tests passed; production build passed; real Electron window loaded five demo tracks and switched both UI languages.
+- Scene composition, media readers and encoding behavior remain unchanged.
+
+界面、程序图标和介绍页截图使用端正居中的矢量 Y；中英文文案统一使用 YuStudio。26 项本地测试与生产构建通过，Electron 实际界面加载并切换双语。

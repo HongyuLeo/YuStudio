@@ -60,7 +60,7 @@ export async function startRender(project: Project, origin: string): Promise<Ren
       job.message = settings.encoder === 'cpu' ? '准备 CPU 编码器…' : '检测 NVIDIA NVENC 实际编码能力…';
       const encoder = await chooseEncoder(project, probeSignal.signal);
       if (cancelled) return;
-      job.diagnostics={version:'1.3.0',machine:machineInfo(),settings:{...project.render,videoReader:settings.videoReader},fps:project.fps,backgrounds:[],videoReaders:[],passes:[],preflight:[],benchmarks:[],runtimeProfiles:[],notes:['绘图设备来自本次渲染的 Chromium；NVENC 编码器与绘图设备分别记录。','画面阶段含并行编码及等待；finalStitchMs 仅是最终拼接/封装耗时，不能当作编码器全部耗时。','近期速度取最近约 10 秒，累计速度包含本方向启动等待；高并发不保证高吞吐。','并行编码 fps 撤销底层进度 80% 编码 / 20% 封装加权；受底层整数舍入影响，恢复帧数有约一帧误差，封装进度不再冒充编码速度。','默认无损帧缓存绕过 OffthreadVideo 的 compositor 图片通信路径；首次准备使用额外磁盘，后续重复使用。']};
+      job.diagnostics={version:'1.3.1',machine:machineInfo(),settings:{...project.render,videoReader:settings.videoReader},fps:project.fps,backgrounds:[],videoReaders:[],passes:[],preflight:[],benchmarks:[],runtimeProfiles:[],notes:['绘图设备来自本次渲染的 Chromium；NVENC 编码器与绘图设备分别记录。','画面阶段含并行编码及等待；finalStitchMs 仅是最终拼接/封装耗时，不能当作编码器全部耗时。','近期速度取最近约 10 秒，累计速度包含本方向启动等待；高并发不保证高吞吐。','并行编码 fps 撤销底层进度 80% 编码 / 20% 封装加权；受底层整数舍入影响，恢复帧数有约一帧误差，封装进度不再冒充编码速度。','默认无损帧缓存绕过 OffthreadVideo 的 compositor 图片通信路径；首次准备使用额外磁盘，后续重复使用。']};
       job.files.push({name:'下载诊断报告.json',url:`/api/render/${id}/diagnostics`});
       job.performance = {encoder: encoder.name, concurrency: project.render.concurrency, cacheMiB: settings.cacheMiB, videoThreads: settings.videoThreads, renderedFps: 0, encodedFps: 0, elapsedSeconds: 0, fallback: encoder.fallback};
       job.diagnostics.backgrounds=await inspectBackgrounds(project);
