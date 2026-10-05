@@ -1,0 +1,151 @@
+{
+  "version": 1,
+  "id": "nocturne-original-demo",
+  "name": "夜色，有回声。",
+  "subtitle": "FIVE SCENES / ONE JOURNEY",
+  "template": "cinematic-glass",
+  "accent": "#d6d3b5",
+  "fps": 30,
+  "tracks": [
+    {
+      "id": "demo-track-1",
+      "title": "雪落无声",
+      "artist": "YuStudio Original",
+      "audio": {
+        "kind": "audio",
+        "src": "demo/track-1.m4a",
+        "name": "track-1.m4a",
+        "duration": 7
+      },
+      "background": {
+        "src": "demo/scene-1.png",
+        "name": "scene-1.png",
+        "kind": "image",
+        "width": 3840,
+        "height": 2160
+      },
+      "focus": {
+        "x": 0.44,
+        "y": 0.48
+      },
+      "atmosphere": {
+        "preset": "snow",
+        "amount": 0.75
+      }
+    },
+    {
+      "id": "demo-track-2",
+      "title": "荷塘微光",
+      "artist": "YuStudio Original",
+      "audio": {
+        "kind": "audio",
+        "src": "demo/track-2.m4a",
+        "name": "track-2.m4a",
+        "duration": 7
+      },
+      "background": {
+        "src": "demo/scene-2.png",
+        "name": "scene-2.png",
+        "kind": "image",
+        "width": 3840,
+        "height": 2160
+      },
+      "focus": {
+        "x": 0.38,
+        "y": 0.48
+      },
+      "atmosphere": {
+        "preset": "fireflies",
+        "amount": 0.75
+      }
+    },
+    {
+      "id": "demo-track-3",
+      "title": "城市夜航",
+      "artist": "YuStudio Original",
+      "audio": {
+        "kind": "audio",
+        "src": "demo/track-3.m4a",
+        "name": "track-3.m4a",
+        "duration": 7
+      },
+      "background": {
+        "src": "demo/city-loop.mp4",
+        "name": "city.mp4",
+        "kind": "video",
+        "duration": 2.267,
+        "width": 1920,
+        "height": 1080,
+        "thumbnail": "demo/city-thumb.jpg",
+        "loopPrepared": true
+      },
+      "focus": {
+        "x": 0.47,
+        "y": 0.48
+      },
+      "atmosphere": {
+        "preset": "embers",
+        "amount": 0.75
+      }
+    },
+    {
+      "id": "demo-track-4",
+      "title": "蓝色时刻",
+      "artist": "YuStudio Original",
+      "audio": {
+        "kind": "audio",
+        "src": "demo/track-4.m4a",
+        "name": "track-4.m4a",
+        "duration": 7
+      },
+      "background": {
+        "src": "demo/scene-4.png",
+        "name": "scene-4.png",
+        "kind": "image",
+        "width": 3840,
+        "height": 2160
+      },
+      "focus": {
+        "x": 0.46,
+        "y": 0.48
+      },
+      "atmosphere": {
+        "preset": "fireflies",
+        "amount": 0.75
+      }
+    },
+    {
+      "id": "demo-track-5",
+      "title": "日落以后",
+      "artist": "YuStudio Original",
+      "audio": {
+        "kind": "audio",
+        "src": "demo/track-5.m4a",
+        "name": "track-5.m4a",
+        "duration": 7
+      },
+      "background": {
+        "src": "demo/scene-5.png",
+        "name": "scene-5.png",
+        "kind": "image",
+        "width": 3840,
+        "height": 2160
+      },
+      "focus": {
+        "x": 0.65,
+        "y": 0.48
+      },
+      "atmosphere": {
+        "preset": "embers",
+        "amount": 0.75
+      }
+    }
+  ],
+  "render": {
+    "landscape": true,
+    "portrait": true,
+    "resolution": "1080p",
+    "codec": "h264",
+    "concurrency": 2
+  }
+}

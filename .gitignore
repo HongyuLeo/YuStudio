@@ -1,0 +1,12 @@
+node_modules/
+dist/
+dist-server/
+remotion-dist/
+release/
+.nocturne/
+.desktop-binaries/
+.desktop-media/
+deliverables/*.mp4
+qa-browser/
+deliverables/
+*.partial.mp4

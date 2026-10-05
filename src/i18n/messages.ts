@@ -1,0 +1,123 @@
+export type Language = 'zh-CN' | 'en';
+export const messages: Record<string, string> = {
+'上次项目的素材暂时不可用，已打开演示。可重新打开项目并绑定素材。': 'Your previous project’s media is unavailable. The demo is open; reopen your project and relink its media.',
+'本地服务没有连接，请用启动脚本打开应用。': 'The local service is disconnected. Open the app using its launcher.',
+'背景已绑定，点击下方图片可设置主体焦点。': 'Background linked. Click its image below to set the subject focus.',
+'项目已保存。导入素材由应用保留在本机。': 'Project saved. Imported media stays on this computer.',
+'项目已打开。': 'Project opened.', '新项目已创建。': 'New project created.',
+'音乐影像工作室': 'Music video studio', '本地创作': 'Create locally', '新建': 'New', '打开': 'Open', '保存项目': 'Save project',
+'首': 'tracks', '每一首，都有自己的画面。': 'A scene for every song.', '导入音乐，为它选择一个场景。': 'Import your music. Give each track a scene.',
+'导入歌曲': 'Import songs', '从第一首音乐开始': 'Start with your first song', '歌手未填写': 'Artist left blank',
+'循环视频': 'Looping video', '动态镜头': 'Moving image', '待绑定背景': 'Add a background',
+'上移': 'Move up', '下移': 'Move down', '移除歌曲': 'Remove song', '总时长': 'total duration', '拖拽调整顺序': 'Drag to reorder',
+'打开原创演示歌单': 'Open the original demo', '让音乐，有画面。': 'Let your music set the scene.',
+'预览素材无法解码，请重新绑定背景。': 'The preview cannot decode this media. Relink the background.',
+'给音乐一个场景': 'Give your music a scene', '导入歌曲后，这里会实时呈现你的作品。': 'Import songs to preview your video here.',
+'暂停': 'Pause', '播放': 'Play', '预览时间': 'Preview position', '实时预览': 'Live preview',
+'项目名称（仅保存用）': 'Project name (for saving)', '项目备注（不显示在视频）': 'Notes (not shown in the video)',
+'同一时间轴 · 两种独立构图': 'One timeline · Two independent layouts',
+'更换焦点后，横竖屏都会重新构图。原图亮度保留，分层氛围可逐首调整。': 'Focus adjusts both layouts. Original brightness is preserved; atmosphere is adjustable per song.',
+'当前场景': 'Current scene', '歌曲名称': 'Song title', '歌手': 'Artist', '背景与焦点': 'Background & focus',
+'更换背景': 'Change background', '点击画面设置主体焦点': 'Click the image to set the subject focus', '背景焦点定位': 'Background focus position',
+'选择图片 / 短视频': 'Choose image / short video', '点击图片中的主体。裁切尽量保留它。': 'Click the subject. Cropping will try to keep it visible.',
+'场景氛围': 'Atmosphere', '暖色火星': 'Warm embers', '轻柔飘雪': 'Soft snow', '萤光漂浮': 'Floating fireflies', '关闭氛围': 'Off', '氛围强度': 'Intensity',
+'远景光点、中景粒子、虚化前景与缓慢雾光。视频已有特效时可关闭。': 'Distant lights, layered particles, foreground bokeh and slow haze. Turn off if your video already has effects.',
+'视觉模板': 'Visual template', '分层粒子 · 轻盈文字 · 原图亮度': 'Layered particles · Light typography · Original brightness',
+'点缀颜色': 'Accent color', '显示歌单': 'Show playlist', '显示进度条': 'Show progress bar', '导出作品': 'Export', '本地渲染': 'Local rendering',
+'横屏 16:9': 'Landscape 16:9', '竖屏 9:16': 'Portrait 9:16', '横屏清晰度': 'Landscape resolution', '帧率': 'Frame rate', '视频编码': 'Video codec',
+'竖屏固定 1080 × 1920 · AAC 48 kHz': 'Portrait: 1080 × 1920 · AAC 48 kHz', '自动生成 YouTube 章节时间戳。': 'YouTube chapter timestamps are generated automatically.',
+'正在生成作品…': 'Rendering…', '生成音乐影像': 'Create music video',
+'项目会在本机自动记住 · 原创演示素材可自由使用': 'Projects are remembered locally · Original demo media is free to use',
+'关闭提示': 'Dismiss notification', '作品已就绪': 'Your video is ready', '导出失败': 'Export failed', '导出已取消': 'Export cancelled',
+'正在制作你的音乐影像': 'Creating your music video', '关闭导出结果': 'Close export results',
+'并发': 'workers', '本机实测选择': 'Measured selection:', '并发 · 画质设置保持原值': 'workers · Quality settings preserved',
+'累计画面': 'Overall frames:', 'fps · 累计编码约': 'fps · Overall encoding ≈', '近期画面': 'Recent frames:', 'fps · 近期编码约': 'fps · Recent encoding ≈',
+'绘图：': 'Graphics: ', '软件渲染': 'Software rendering', '硬件合成': 'Hardware compositing', '状态未确认': 'Unconfirmed',
+'视频背景：': 'Video backgrounds: ', '无损帧缓存': 'Lossless frame cache', '读取失败': 'Read failed', '快速 / 兼容混合读取': 'Mixed fast / compatible reader',
+'快速读取': 'Fast reader', '兼容读取': 'Compatible reader', '工作方式：': 'Pipeline: ',
+'画面与编码同时进行': 'Frames and encoding in parallel', '先生成画面，再编码': 'Frames first, then encoding',
+'已用': 'Elapsed:', '秒 · 缓存': 's · Cache:', 'MB · 解码': 'MB · Decoder:', '线程': 'threads',
+'取消导出': 'Cancel export', '打开输出文件夹': 'Open output folder', '生成性能': 'Performance', '全力输出': 'Full power',
+'正在读取本机配置…': 'Reading system configuration…',
+'全力输出：强制 NVENC + 无损背景缓存 + 实测最快并发。测速包含本机最大并发，速度以实际输出为准。': 'Full power: require NVENC, use lossless backgrounds and measure concurrency. Includes the system maximum; speed is based on completed output.',
+'编码设备': 'Encoder', 'NVIDIA NVENC · 强制 GPU': 'NVIDIA NVENC · Required', 'GPU 优先 · 不可用时 CPU': 'Prefer GPU · CPU fallback', 'CPU 编码': 'CPU encoding',
+'渲染并发': 'Render concurrency', '编码档位': 'Encoding preset', '极速': 'Fast', '均衡': 'Balanced', '精细压缩': 'Efficient compression',
+'实测最快并发': 'Measure fastest concurrency',
+'生成前用当前画质测试 4 / 8 / 16 / 32、本机最大值及填写值，按完成画面和编码的实际吞吐选择。测速需要额外时间，横竖屏分别测；修改并发数字会切回手动。帧率、分辨率、码率与特效保持原设置。': 'Tests 4 / 8 / 16 / 32, the system maximum and your value at the current quality. Chooses by completed frames and encoding. Adds time and tests each orientation separately. Editing concurrency returns to manual mode. FPS, resolution, bitrate and effects stay unchanged.',
+'视频缓存 / MB': 'Video memory cache / MB', '视频解码线程': 'Video decoder threads', '视频背景读取': 'Video background reader',
+'无损帧缓存 · 循环背景优先': 'Lossless frame cache · Looping backgrounds', '快速读取 · 浏览器解码': 'Fast reader · Browser decoding',
+'无损帧缓存首次准备占用磁盘，后续重复使用；解码线程只用于准备视频。上方 MB 用于快速视频读取，磁盘帧缓存单独计量。快速读取无法解码会在生成前报告。分辨率、帧率和场景特效保持原设置。': 'Lossless frames use disk space on first preparation and are reused. Decoder threads apply to preparation. MB above is the fast reader’s memory budget; disk cache is separate. Decode failures are reported before rendering. Resolution, FPS and effects stay unchanged.',
+'背景磁盘缓存：': 'Background disk cache: ', '读取中…': 'Loading…', '已清理，下次生成会重新准备。': 'Cache cleared. It will be prepared again on the next export.',
+'清理背景缓存': 'Clear background cache', '画面渲染': 'Graphics renderer', 'GPU 优先 / ANGLE': 'Prefer GPU / ANGLE', '软件 / SwiftShader': 'Software / SwiftShader',
+'码率 / Mbps（0 自动）': 'Bitrate / Mbps (0 = auto)', '并发可自行填写 1–': 'Set concurrency from 1–', '本机线程数': 'system thread count',
+'。强制 NVENC 失败会直接报告；生成面板显示实际绘图设备、编码器及近期速度，可直接下载诊断报告。': '. Required NVENC reports failures directly. The export panel shows the actual graphics device, encoder and recent speed; download its diagnostic report there.',
+'我的音乐影像': 'My music video', '本地服务暂时不可用。': 'The local service is temporarily unavailable.', '导入失败。': 'Import failed.',
+'只能在本机使用。': 'This app is available only on this computer.', '跨站请求已拒绝。': 'Cross-site request rejected.',
+'请等待当前生成任务结束，再清理背景缓存。': 'Wait for the current render to finish before clearing the background cache.',
+'没有选择文件。': 'No files selected.', '找不到此导出任务。': 'Export job not found.', '没有找到此导出任务。': 'Export job not found.',
+'歌曲 ID 重复': 'Duplicate song IDs', '背景必须是图片或视频': 'A background must be an image or video',
+'请先导入至少一首歌曲。': 'Import at least one song first.', '请选择至少一种输出比例。': 'Select at least one output orientation.',
+'素材路径无效，请重新导入。': 'Invalid media path. Import the media again.',
+'已有一个导出任务正在运行，请等待或取消。': 'An export is already running. Wait for it or cancel it.',
+'准备渲染器与本地字体…': 'Preparing renderer and local fonts…', '已取消，完整输出保留，未完成的文件清理。': 'Cancelled. Completed exports are kept; unfinished files are removed.',
+'准备 CPU 编码器…': 'Preparing CPU encoder…', '检测 NVIDIA NVENC 实际编码能力…': 'Testing NVIDIA NVENC encoding…',
+'下载诊断报告.json': 'Download diagnostics.json',
+'Chromium 准备失败。请检查网络，或设置 REMOTION_BROWSER_EXECUTABLE。': 'Chromium setup failed. Check your connection or set REMOTION_BROWSER_EXECUTABLE.',
+'渲染横屏影像…': 'Rendering landscape video…', '渲染竖屏影像…': 'Rendering portrait video…', '导出完成': 'Export complete',
+'NVENC 初始化超过 15 秒': 'NVENC initialization exceeded 15 seconds',
+'没有找到可播放的音频轨。': 'No playable audio track found.', '音频时长无效，或超过 24 小时。': 'Audio duration is invalid or exceeds 24 hours.',
+'背景素材没有有效画面。': 'The background contains no valid image.', '背景视频需为 0.15 秒至 10 分钟的短视频。': 'Background videos must be between 0.15 seconds and 10 minutes.',
+'歌曲导入失败。': 'Song import failed.', '缓存帧不完整': 'Incomplete cached frame', '缓存帧格式无效': 'Invalid cached frame format', '已取消': 'Cancelled',
+'横屏': 'landscape', '竖屏': 'portrait',
+};
+// Values inside braces are opaque: filenames, titles, device names and FFmpeg
+// output are preserved rather than translated. Patterns match the whole message.
+export const messagePatterns: [string, string][] = [
+ ['导入歌曲 {0}/{1} · {2}', 'Importing song {0}/{1} · {2}'],
+ ['已导入 {0} 首歌曲，请给每首歌绑定背景。', 'Imported {0} songs. Link a background to each song.'],
+ ['准备背景 · {0}（视频会自动处理循环接缝）', 'Preparing background · {0} (video loop seams are handled automatically)'],
+ ['{0} 个逻辑线程 · {1} GB 内存', '{0} logical threads · {1} GB RAM'],
+ ['{0} GB · {1} 个背景', '{0} GB · {1} backgrounds'],
+ ['找不到素材「{0}」。请重新绑定文件，或在原电脑打开此项目。', 'Media “{0}” was not found. Relink it or open this project on its original computer.'],
+ ['这些歌曲还没有背景：{0}', 'These songs need backgrounds: {0}'],
+ ['准备画面组件 {0}%…', 'Preparing scene components {0}%…'],
+ ['首次准备 Chromium {0}%…', 'Setting up Chromium for the first time {0}%…'],
+ ['生成前检查{0}背景与转场…', 'Checking {0} backgrounds and transitions…'],
+ ['生成前检查{0}背景与转场 {1}/{2}…', 'Checking {0} backgrounds and transitions {1}/{2}…'],
+ ['本机测速 {0} · {1} 并发 · 场景 {2}/{3}…', 'Measuring {0} · {1} workers · Scene {2}/{3}…'],
+ ['本机测速 {0} · {1} 并发 · 场景 {2}/{3} · {4}/{5} 帧…', 'Measuring {0} · {1} workers · Scene {2}/{3} · {4}/{5} frames…'],
+ ['渲染横屏影像…（实测选择 {0} 并发）', 'Rendering landscape video… ({0} measured workers)'],
+ ['渲染竖屏影像…（实测选择 {0} 并发）', 'Rendering portrait video… ({0} measured workers)'],
+ ['准备背景无损帧缓存 {0}/{1}：{2}', 'Preparing lossless background cache {0}/{1}: {2}'],
+ ['准备「{0}」无损帧缓存 {1}/{2} 帧', 'Preparing “{0}” lossless frame cache {1}/{2} frames'],
+ ['背景「{0}」没有有效视频画面。', 'Background “{0}” has no valid video frames.'],
+ ['背景「{0}」的帧时间无效，请重新导入。', 'Background “{0}” has invalid frame timestamps. Import it again.'],
+ ['背景「{0}」解码帧数不一致，准备已停止。', 'Decoded frame count mismatch for “{0}”. Preparation stopped.'],
+ ['背景「{0}」无损帧缓存最多需要约 {1} GB，当前磁盘可用 {2} GB。请清理磁盘，或在视频背景读取中选择快速读取。', 'Lossless cache for “{0}” may need about {1} GB; available disk space is {2} GB. Free disk space or select the fast video reader.'],
+ ['本机渲染器支持最多 {0} 并发，当前填写 {1}。请填写 1–{2}；软件不再限制为 12 或 16。', 'This system supports up to {0} workers; your value is {1}. Enter 1–{2}; the app has no fixed limit of 12 or 16.'],
+ ['强制 NVIDIA NVENC 初始化失败，本次生成已停止。\n{0}', 'Required NVIDIA NVENC initialization failed. This export has stopped.\n{0}'],
+ ['NVENC 不可用，自动模式改用 CPU：{0}', 'NVENC unavailable. Automatic mode switched to CPU: {0}'],
+ ['FFmpeg 退出码 {0}', 'FFmpeg exit code {0}'], ['退出码 {0}', 'exit code {0}'],
+ ['{0} 处理超时，请尝试更短的素材。', '{0} timed out. Try shorter media.'],
+ ['无法启动 {0}。请重新安装依赖，或设置 {1}_PATH。{2}', 'Cannot start {0}. Reinstall dependencies or set {1}_PATH. {2}'],
+ ['{0} 无法读取或处理素材：{1}', '{0} cannot read or process this media: {1}'],
+ ['不支持这个文件格式：{0}', 'Unsupported file format: {0}'],
+ ['背景帧缓存 {0} 失败：{1}', 'Background frame cache {0} failed: {1}'],
+];
+const escapeRegex = (value: string) => value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+const patterns = [...messagePatterns].sort((a, b) => b[0].replace(/\{\d+\}/g, '').length - a[0].replace(/\{\d+\}/g, '').length).map(([source, target]) => ({
+  source, target, regex: new RegExp('^' + source.split(/\{\d+\}/).map(escapeRegex).join('([\\s\\S]*?)') + '$'),
+}));
+export function translateText(value: string, language: Language): string {
+  if (language !== 'en' || !value) return value;
+  if (messages[value] !== undefined) return messages[value];
+  for (const {regex, target} of patterns) {
+    const match = regex.exec(value);
+    if (match) return target.replace(/\{(\d+)\}/g, (_, index) => {
+      const part = match[Number(index) + 1];
+      // Only system orientation markers are localized inside placeholders.
+      return part === '横屏' ? 'landscape' : part === '竖屏' ? 'portrait' : part;
+    });
+  }
+  return value;
+}

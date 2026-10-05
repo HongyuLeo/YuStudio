@@ -1,0 +1,64 @@
+name: Build YuStudio for Windows
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths-ignore: ['docs/**', 'README*', '*.md']
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - run: npx tsc --noEmit
+  windows:
+    needs: test
+    runs-on: windows-latest
+    permissions:
+      contents: write
+    env:
+      CSC_IDENTITY_AUTO_DISCOVERY: 'false'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - name: Test on Windows
+        shell: pwsh
+        run: |
+          $env:FFMPEG_PATH = node -e "process.stdout.write(require('ffmpeg-static'))"
+          npm test
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Build Windows portable package
+        run: npm run dist:win
+      - name: Open packaged desktop and verify both languages
+        run: node scripts/smoke-windows.cjs
+      - name: Create source archive and checksums
+        shell: pwsh
+        run: |
+          node scripts/package-source.cjs
+          $lines = Get-ChildItem release/*.zip | ForEach-Object { (Get-FileHash $_.FullName -Algorithm SHA256).Hash.ToLower() + '  ' + $_.Name }
+          [IO.File]::WriteAllLines((Join-Path $pwd 'release/SHA256SUMS.txt'), $lines, [Text.UTF8Encoding]::new($false))
+      - name: Publish verified Windows release
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          $version = node -p "require('./package.json').version"
+          $tag = "v$version"
+          gh release view $tag *> $null
+          if ($LASTEXITCODE -eq 0) {
+            gh release upload $tag release/YuStudio-Windows-x64.zip release/YuStudio-Source.zip release/SHA256SUMS.txt --clobber
+          } else {
+            gh release create $tag release/YuStudio-Windows-x64.zip release/YuStudio-Source.zip release/SHA256SUMS.txt --target $env:GITHUB_SHA --title "YuStudio $version · 中文 / English" --notes-file RELEASE_NOTES.md
+          }
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
